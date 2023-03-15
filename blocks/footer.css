@@ -1,0 +1,17 @@
+.footer {
+  margin: 60px auto 60px;
+}
+
+.footer__copyright {
+  color: #545454;
+}
+
+@media screen and (max-width: 900px) {
+  .footer {
+    margin: 60px auto 60px;
+  }
+
+  .footer__copyright {
+    margin: 60px auto 60px;
+  }
+}

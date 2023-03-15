@@ -1,0 +1,240 @@
+@import url(../vendor/fonts/normalize.css);
+@import url(../vendor/fonts/fonts.css);
+/*
+@import url(../blocks/page.css);
+@import url(../blocks/header.css);
+@import url(../blocks/profile.css);
+@import url(../blocks/card.css);
+@import url(../blocks/footer.css); */
+
+.page {
+  background-color: black;
+  color: white;
+  font-family: "Inter", arial, sans-serif;
+}
+
+.page__section {
+  max-width: 880px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.page__content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  margin-top: 45px;
+}
+
+.header__border {
+  border-bottom: 1px solid #545454;
+  margin-top: 40px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.profile__info {
+  display: grid;
+  grid-template-areas:
+    "title button"
+    "description description";
+  grid-template-columns: minmax(auto, 373px) auto;
+}
+
+.profile__edit-button {
+  background: transparent url(../images/edit-icon.svg) center no-repeat;
+  height: 24px;
+  width: 24px;
+  grid-area: button;
+  border: 1px solid #ffffff;
+  margin-left: 18px;
+}
+
+.profile__edit-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.profile__add-button {
+  background: transparent url(../images/add-icon.svg) center no-repeat;
+  width: 150px;
+  height: 50px;
+  margin-left: auto;
+  border: 2px solid #fff;
+  border-radius: 2px;
+}
+
+.profile__add-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.profile__title {
+  font-size: 42px;
+  line-height: 1.2;
+  font-weight: 500;
+  grid-area: title;
+  margin: 0;
+}
+
+.profile__description {
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 400;
+  grid-area: description;
+  margin: 0;
+}
+
+.profile__image {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-position: center;
+  margin-right: 24px;
+}
+
+.cards {
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.card__list {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 282px);
+  /* This sprint introduced Grid theory. Using 'auto-fit'
+  in for grid-template-columns will automatically configure
+  the correct number of columns that will fit at each resolution */
+  grid-gap: 20px 17px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__image {
+  width: 282px;
+  height: 282px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card__description {
+  display: flex;
+  background-color: white;
+  color: black;
+  padding: 25px 20px 25px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.card__title {
+  max-width: 220px;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0;
+}
+
+.card__like-button {
+  background: transparent url(../images/like-icon.svg) center no-repeat;
+  width: 21px;
+  height: 18px;
+  border: none;
+}
+
+.card__like-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.footer {
+  margin: 60px auto 60px;
+}
+
+.footer__copyright {
+  color: #545454;
+}
+
+@media screen and (max-width: 620px) {
+  .page__section {
+    margin: auto;
+    max-width: calc(100% - 40px);
+    /* this calculation prevents cards from touching the
+    screen's edge at certain widths, "sticky elements" are to be avoided*/
+  }
+
+  .profile {
+    flex-direction: column;
+  }
+
+  .profile__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 35px;
+  }
+
+  .profile__title {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  .profile__description {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .profile__edit-button {
+    margin-left: 10px;
+  }
+  .profile__add-button {
+    width: 100%;
+    margin: 0 auto 0;
+    max-width: 282px;
+  }
+  /* This assignment emphasizes responsive design. In order to code a
+     design that can efficiently fluctate on various screen sizes, it is 
+     important to not set element widths in pixels, but rather percentages. */
+}
+
+@media screen and (max-width: 900px) {
+  .page__section {
+    margin: 0 20px;
+    max-width: calc(100% - 40px);
+  }
+  .header {
+    margin-top: 45px;
+  }
+  .profile {
+    padding-bottom: 45px;
+  }
+
+  .profile__title {
+    margin-bottom: 15px;
+  }
+
+  .footer {
+    margin: 60px auto 60px;
+  }
+}

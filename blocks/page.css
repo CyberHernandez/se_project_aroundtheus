@@ -1,0 +1,27 @@
+.page {
+  background-color: black;
+  color: white;
+  font-family: "Inter", arial, sans-serif;
+}
+
+.page__section {
+  max-width: 880px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.page__content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@media screen and (max-width: 620px) {
+  .page__section {
+    margin: 0 20px;
+    max-width: calc(100% - 40px);
+    /* this calculation prevents cards from touching the
+      screen's edge at certain widths, "sticky elements" are to be avoided*/
+  }
+}

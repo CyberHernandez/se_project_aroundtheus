@@ -1,0 +1,115 @@
+.profile {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.profile__info {
+  display: grid;
+  grid-template-areas:
+    "title button"
+    "description description";
+  grid-template-columns: minmax(auto, 373px) auto;
+}
+
+.profile__edit-button {
+  background: transparent url(../images/edit-icon.svg) center no-repeat;
+  height: 24px;
+  width: 24px;
+  grid-area: button;
+  border: 1px solid #ffffff;
+  margin-left: 18px;
+}
+
+.profile__edit-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.profile__add-button {
+  background: transparent url(../images/add-icon.svg) center no-repeat;
+  width: 150px;
+  height: 50px;
+  margin-left: auto;
+  border: 2px solid #fff;
+  border-radius: 2px;
+}
+
+.profile__add-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.profile__title {
+  font-size: 42px;
+  line-height: 1.2;
+  font-weight: 500;
+  grid-area: title;
+  margin: 0;
+}
+
+.profile__description {
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 400;
+  grid-area: description;
+  margin: 0;
+}
+
+.profile__image {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-position: center;
+  margin-right: 24px;
+}
+
+@media screen and (max-width: 620px) {
+  .profile {
+    flex-direction: column;
+  }
+
+  .profile__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 35px;
+  }
+
+  .profile__title {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  .profile__description {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .profile__edit-button {
+    margin: 0;
+  }
+  .profile__add-button {
+    width: 100%;
+    margin: 0 auto 0;
+    max-width: 282px;
+  }
+  /* This assignment emphasizes responsive design. In order to code a
+       design that can efficiently fluctate on various screen sizes, it is 
+       important to not set element widths in pixels, but rather percentages. */
+}
+
+@media screen and (max-width: 900px) {
+  .profile {
+    padding-bottom: 45px;
+  }
+  .profile__title {
+    margin-bottom: 15px;
+  }
+  .profile__edit-button {
+    margin: 0;
+  }
+}

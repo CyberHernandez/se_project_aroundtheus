@@ -1,0 +1,63 @@
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards {
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.card__list {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 282px);
+  /* This sprint introduced Grid theory. Using 'auto-fit'
+  in for grid-template-columns will automatically configure
+  the correct number of columns that will fit at each resolution */
+  grid-gap: 20px 17px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card__image {
+  width: 282px;
+  height: 282px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card__description {
+  display: flex;
+  background-color: white;
+  color: black;
+  padding: 25px 20px 25px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.card__title {
+  max-width: 220px;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0;
+}
+
+.card__like-button {
+  background: transparent url(../images/like-icon.svg) center no-repeat;
+  width: 21px;
+  height: 18px;
+  border: none;
+}
+
+.card__like-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
