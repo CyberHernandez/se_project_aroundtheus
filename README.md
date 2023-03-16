@@ -17,8 +17,8 @@ This project is made so all the elements are displayed correctly on popular scre
 HTML and CSS were created using this design brief via Figma.
 
 **Images**
-Mobile Screen: 320px-620px
-Tablet Screen: 621px-900px
-Desktop: >900px
+[Mobile Screenshot](./images/demo/320px)
+[Tablet Screenshot](./images/demo/620px)
+[Desktopshot](./images/demo/900px)
 
 Site is live at https://cyberhernandez.github.io/se_project_aroundtheus/
