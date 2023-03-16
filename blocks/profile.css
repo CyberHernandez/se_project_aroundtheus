@@ -95,7 +95,7 @@
   }
 
   .profile__edit-button {
-    left-margin: 10;
+    margin-left: 10px;
   }
   .profile__add-button {
     width: 100%;
