@@ -19,9 +19,15 @@
 
 @media screen and (max-width: 620px) {
   .page__section {
-    margin: 0 20px;
     max-width: calc(100% - 40px);
+
     /* this calculation prevents cards from touching the
       screen's edge at certain widths, "sticky elements" are to be avoided*/
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .page__section {
+    max-width: calc(100% - 40px);
   }
 }

@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   padding-top: 40px;
+  padding-bottom: 10px;
 }
 
 .profile__info {
@@ -68,15 +69,18 @@
 @media screen and (max-width: 620px) {
   .profile {
     flex-direction: column;
+    padding-bottom: 0;
   }
 
+  .profile__image {
+    margin: 0 auto;
+  }
   .profile__info {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
     margin-top: 25px;
-    margin-bottom: 35px;
   }
 
   .profile__title {
@@ -87,14 +91,15 @@
     width: 100%;
     text-align: center;
     font-size: 14px;
+    margin-bottom: 35px;
   }
 
   .profile__edit-button {
-    margin: 0;
+    left-margin: 10;
   }
   .profile__add-button {
     width: 100%;
-    margin: 0 auto 0;
+    margin: 0 auto;
     max-width: 282px;
   }
   /* This assignment emphasizes responsive design. In order to code a
@@ -104,12 +109,9 @@
 
 @media screen and (max-width: 900px) {
   .profile {
-    padding-bottom: 45px;
+    padding-bottom: 10px;
   }
   .profile__title {
     margin-bottom: 15px;
-  }
-  .profile__edit-button {
-    margin: 0;
   }
 }

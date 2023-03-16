@@ -4,7 +4,7 @@
 }
 
 .cards {
-  margin-top: 30px;
+  margin-top: 35px;
   margin-bottom: 5px;
 }
 
@@ -19,6 +19,8 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  max-width: 880px;
+  margin: auto;
 }
 
 .card__image {
@@ -60,4 +62,10 @@
 .card__like-button:hover {
   cursor: pointer;
   opacity: 0.6;
+}
+
+@media screen and (max-width: 620px) {
+  .cards {
+    margin-top: 25px;
+  }
 }

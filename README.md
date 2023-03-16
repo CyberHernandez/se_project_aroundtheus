@@ -17,6 +17,6 @@ This project is made so all the elements are displayed correctly on popular scre
 HTML and CSS were created using this design brief via Figma.
 
 **Images**
-Mobile Screen:
-Tablet Screen:
-Desktop:
+Mobile Screen: 320px-620px
+Tablet Screen: 621px-900px
+Desktop: >900px
