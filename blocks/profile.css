@@ -47,6 +47,10 @@
   font-weight: 500;
   grid-area: title;
   margin: 0;
+  /* the following code will hide long text with ellipsis*/
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .profile__description {
@@ -55,6 +59,9 @@
   font-weight: 400;
   grid-area: description;
   margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .profile__image {
@@ -101,6 +108,8 @@
   }
 
   .profile__edit-button {
+    height: 18px;
+    width: 18px;
     margin-left: 10px;
   }
   .profile__add-button {

@@ -9,7 +9,11 @@
 
 @media screen and (max-width: 620px) {
   .header {
+    max-width: calc(100% + 40px);
+    /* In this case the calculation extends the bottom border to touch the
+      screens' edge when viewed on a mobile device*/
     margin-top: 30px;
+    padding-left: 30px;
   }
 
   .header__logo {
