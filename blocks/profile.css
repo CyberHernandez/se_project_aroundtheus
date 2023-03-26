@@ -41,7 +41,7 @@
   opacity: 0.6;
 }
 
-.profile__title {
+.profile__name {
   font-size: 42px;
   line-height: 1.2;
   font-weight: 500;
@@ -93,7 +93,7 @@
     overflow: hidden;
   }
 
-  .profile__title {
+  .profile__name {
     font-size: 22px;
     margin-bottom: 15px;
   }
@@ -124,7 +124,7 @@
   .profile {
     padding-bottom: 10px;
   }
-  .profile__title {
+  .profile__name {
     margin-bottom: 15px;
   }
 }
