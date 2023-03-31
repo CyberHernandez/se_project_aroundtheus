@@ -5,6 +5,15 @@
   padding-bottom: 10px;
 }
 
+.profile__image {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-position: center;
+  margin-right: 24px;
+}
+
 .profile__info {
   display: grid;
   grid-template-areas:
@@ -62,15 +71,6 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-}
-
-.profile__image {
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  background-position: center;
-  margin-right: 24px;
 }
 
 @media screen and (max-width: 620px) {

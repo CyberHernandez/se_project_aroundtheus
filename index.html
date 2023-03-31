@@ -26,7 +26,7 @@
             class="profile__image"
           />
           <div class="profile__info">
-            <h1 class="profile__title">Jacques Cousteau</h1>
+            <h1 class="profile__name">Jacques Cousteau</h1>
             <button
               type="button"
               class="profile__edit-button"
@@ -37,74 +37,7 @@
           <button type="button" class="profile__add-button"></button>
         </section>
         <section class="cards page__section">
-          <ul class="cards__list">
-            <li class="card">
-              <img
-                class="cards__image"
-                src="./images/yosemite.jpg"
-                alt="Yosemite Valley"
-              />
-              <div class="cards__description">
-                <h2 class="cards__title">Yosemite Valley</h2>
-                <button type="button" class="cards__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="cards__image"
-                src="./images/lake-louise.jpg"
-                alt="Lake Louise"
-              />
-              <div class="cards__description">
-                <h2 class="cards__title">Lake Louise</h2>
-                <button type="button" class="cards__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="cards__image"
-                src="./images/bald-mountains.jpg"
-                alt="Bald Mountains"
-              />
-              <div class="cards__description">
-                <h2 class="cards__title">Bald Mountains</h2>
-                <button type="button" class="cards__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="cards__image"
-                src="./images/latemar.jpg"
-                alt="Latemar"
-              />
-              <div class="cards__description">
-                <h2 class="cards__title">Latemar</h2>
-                <button type="button" class="cards__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="cards__image"
-                src="./images/vanoise.jpg"
-                alt="Vanoise National Park"
-              />
-              <div class="cards__description">
-                <h2 class="cards__title">Vanoise National Park</h2>
-                <button type="button" class="cards__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                class="cards__image"
-                src="./images/lago.jpg"
-                alt="Lago di Braies"
-              />
-              <div class="cards__description">
-                <h2 class="cards__title">Lago di Braies</h2>
-                <button type="button" class="cards__like-button"></button>
-              </div>
-            </li>
-          </ul>
+          <ul class="cards__list"></ul>
         </section>
       </main>
       <footer class="footer page__section">
@@ -121,13 +54,15 @@
             class="modal__form-input"
             type="text"
             name="name"
-            placeholder="Jacques Cousteau"
+            placeholder="Name"
+            id="profile-name-input"
           />
           <input
             class="modal__form-input"
             type="text"
             name="description"
-            placeholder="Explorer"
+            placeholder="Description"
+            id="profile-description-input"
           />
           <button class="modal__save-button" id="modal-save-button">
             Save
@@ -135,6 +70,16 @@
         </form>
       </div>
     </div>
+
+    <template id="card-template">
+      <li class="card">
+        <img class="cards__image" src="" alt="" />
+        <div class="cards__description">
+          <h2 class="cards__title"></h2>
+          <button type="button" class="cards__like-button"></button>
+        </div>
+      </li>
+    </template>
 
     <script src="./scripts/index.js"></script>
   </body>

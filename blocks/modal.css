@@ -53,7 +53,8 @@
   color: #000;
   margin-bottom: 30px;
   border: none;
-  border-bottom: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  padding-bottom: 13px;
 }
 
 .modal__save-button {
