@@ -56,6 +56,7 @@
             name="name"
             placeholder="Name"
             id="profile-name-input"
+            required
           />
           <input
             class="modal__form-input"
@@ -63,6 +64,7 @@
             name="description"
             placeholder="Description"
             id="profile-description-input"
+            required
           />
           <button class="modal__save-button" id="modal-save-button">
             Save
@@ -73,14 +75,14 @@
 
     <template id="card-template">
       <li class="card">
-        <img class="cards__image" src="" alt="" />
-        <div class="cards__description">
-          <h2 class="cards__title"></h2>
-          <button type="button" class="cards__like-button"></button>
+        <img class="card__image" src="" alt="" />
+        <div class="card__description">
+          <h2 class="card__title"></h2>
+          <button type="button" class="card__like-button"></button>
         </div>
       </li>
     </template>
 
-    <script src="./scripts/index.js"></script>
+    <script src="./scripts/index.js" defer></script>
   </body>
 </html>
