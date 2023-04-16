@@ -15,6 +15,7 @@
 .modal_opened {
   display: flex;
 }
+
 .modal__container {
   position: relative;
   background-color: white;

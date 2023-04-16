@@ -49,6 +49,9 @@ const cardAddForm = cardAddModal.querySelector("#add-card-form");
 const cardTitleInput = cardAddModal.querySelector("#card-title-input");
 const cardLinkInput = cardAddModal.querySelector("#link-input");
 
+const imageModal = document.querySelector("#image-modal");
+const imageModalEl = document.querySelector(".modal__image");
+const imageModalCaption = document.querySelector(".modal__caption");
 /* -------------------------------------------------------------------------- */
 /*                                  FUNCTIONS                                 */
 /* -------------------------------------------------------------------------- */
@@ -70,17 +73,27 @@ function getCard(cardData) {
   const imageEl = cardEl.querySelector(".card__image");
   const cardTitle = cardEl.querySelector(".card__title");
   const likeButton = cardEl.querySelector(".card__like-button");
-  // const deleteButton = cardEl.querySelector(".card__delete-button");
+  const deleteButton = cardEl.querySelector(".card__trash-button");
+  const imageModal = cardEl.querySelector(".card__image");
+
   imageEl.src = cardData.link;
   imageEl.alt = cardData.name;
   cardTitle.textContent = cardData.name;
 
-  likeButton.addEventListener("click", function () {
+  likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-active");
   });
-  /*deleteButton.addEventListener("click", handleDeleteCard);
-  cardImage.addEventListener("click", () => handlePreviewPicture(cardData));
-*/
+
+  deleteButton.addEventListener("click", () => {
+    cardEl.remove();
+  });
+
+  imageEl.addEventListener("click", () => {
+    modalImageEl.src = cardData.link;
+    imageModalCaption.textContent = cardData.name;
+    openModal(imageModal);
+  });
+
   return cardEl;
 }
 
@@ -109,14 +122,10 @@ function handlecardAddSubmit(e) {
   closeModal(cardAddModal);
 }
 /*
-const handleDeleteCard = (e) => {
-  e.target.closest(".card").remove();
-};
-
-const handlePreviewPicture = (cardData) => {
+const handleImageModal = (cardData) => {
   imageEl.src = cardData.link;
   imageEl.alt = ${cardData.name};
-  imageCaption.textContent = data.name;
+  imageCaption.textContent = cardData.name;
   openModal(imageModal);
 };
 /* -------------------------------------------------------------------------- */
