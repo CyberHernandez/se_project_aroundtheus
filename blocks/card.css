@@ -1,6 +1,7 @@
 .card {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .card__image {
@@ -8,6 +9,7 @@
   height: 282px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  position: relative;
 }
 
 .card__description {
@@ -42,4 +44,27 @@
 .card__like-button:hover {
   cursor: pointer;
   opacity: 0.5;
+}
+
+.card__like-active {
+  background: transparent url(../images/like-active.svg) center no-repeat;
+}
+
+.card__trash-button {
+  background: url(../images/Trash.svg);
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+}
+
+.card__trash-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
 }

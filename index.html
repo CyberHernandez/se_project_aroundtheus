@@ -34,7 +34,11 @@
             ></button>
             <p class="profile__description">Explorer</p>
           </div>
-          <button type="button" class="profile__add-button"></button>
+          <button
+            type="button"
+            class="profile__add-button"
+            id="add-button"
+          ></button>
         </section>
         <section class="cards page__section">
           <ul class="cards__list"></ul>
@@ -47,7 +51,7 @@
 
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
-        <button class="modal__close-button" id="modal-close-button"></button>
+        <button class="modal__close-button" id="edit-close-button"></button>
         <h2 class="modal__header">Edit profile</h2>
         <form class="modal__form">
           <input
@@ -66,9 +70,33 @@
             id="profile-description-input"
             required
           />
-          <button class="modal__save-button" id="modal-save-button">
-            Save
-          </button>
+          <button class="modal__save-button" id="edit-save-button">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" id="add-modal">
+      <div class="modal__container">
+        <button class="modal__close-button" id="add-close-button"></button>
+        <h2 class="modal__header">New Place</h2>
+        <form class="modal__form" id="add-card-form">
+          <input
+            class="modal__form-input"
+            type="text"
+            name="title"
+            placeholder="Title"
+            id="card-title-input"
+            required
+          />
+          <input
+            class="modal__form-input"
+            type="text"
+            name="link"
+            placeholder="Image URL"
+            id="link-input"
+            required
+          />
+          <button class="modal__save-button" id="add-save-button">Save</button>
         </form>
       </div>
     </div>
@@ -76,6 +104,11 @@
     <template id="card-template">
       <li class="card">
         <img class="card__image" src="" alt="" />
+        <button
+          class=".card__trash-button"
+          type="button"
+          id="trash-button"
+        ></button>
         <div class="card__description">
           <h2 class="card__title"></h2>
           <button type="button" class="card__like-button"></button>
