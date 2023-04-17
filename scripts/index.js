@@ -122,13 +122,6 @@ function handlecardAddSubmit(e) {
   );
   closeModal(cardAddModal);
 }
-/*
-const handleImageModal = (cardData) => {
-  imageEl.src = cardData.link;
-  imageEl.alt = ${cardData.name};
-  imageCaption.textContent = cardData.name;
-  openModal(imageModal);
-};
 /* -------------------------------------------------------------------------- */
 /*                               EVENT LISTENERS                              */
 /* -------------------------------------------------------------------------- */
