@@ -157,7 +157,6 @@ cardAddForm.addEventListener("submit", (e) => {
 
   renderCard(cardView, cardListEl);
   closeModal(cardAddModal);
-  cardAddForm.reset();
 });
 
 imageModalCloseButton.addEventListener("click", () => {
