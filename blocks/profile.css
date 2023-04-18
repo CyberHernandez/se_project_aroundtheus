@@ -29,6 +29,7 @@
   grid-area: button;
   border: 1px solid #ffffff;
   margin-left: 18px;
+  transition: opacity 0.3s ease-in;
 }
 
 .profile__edit-button:hover {
@@ -43,6 +44,7 @@
   margin-left: auto;
   border: 2px solid #fff;
   border-radius: 2px;
+  transition: opacity 0.3s ease-in;
 }
 
 .profile__add-button:hover {

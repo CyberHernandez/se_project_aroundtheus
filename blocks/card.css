@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  cursor: pointer;
 }
 
 .card__image {
@@ -11,6 +10,7 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   position: relative;
+  cursor: pointer;
 }
 
 .card__description {
@@ -40,6 +40,7 @@
   width: 21px;
   height: 18px;
   border: none;
+  transition: opacity 0.3s ease-in;
 }
 
 .card__like-button:hover {
@@ -63,6 +64,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   border: none;
+  transition: opacity 0.3s ease-in;
 }
 
 .card__trash-button:hover {
