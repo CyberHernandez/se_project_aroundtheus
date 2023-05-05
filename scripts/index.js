@@ -54,8 +54,7 @@ const imageModalEl = document.querySelector(".modal__image");
 const imageModalCaption = document.querySelector(".modal__caption");
 const imageModalCloseButton = document.querySelector("#image-close-button");
 
-const modalOverlay = document.querySelector(".modal");
-const modal = document.querySelector(".modal__contianer");
+const modal = document.querySelectorAll(".modal");
 /* -------------------------------------------------------------------------- */
 /*                                  FUNCTIONS                                 */
 /* -------------------------------------------------------------------------- */
@@ -67,11 +66,6 @@ function openModal(modal) {
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
   document.removeEventListener("keydown", (e) => handleEscape(e, modal));
-  modalOverlay.addEventListener("click", function (evt) {
-    if (evt.target === modal) {
-      closeModal;
-    }
-  });
 }
 
 function handleEscape(e, modal) {
@@ -177,4 +171,14 @@ cardAddForm.addEventListener("submit", (e) => {
 
 imageModalCloseButton.addEventListener("click", () => {
   closeModal(imageModal);
+});
+
+modal.addEventListener("click", (evt) => {
+  if (
+    evt.target.classList.contains("modal") ||
+    evt.target.classList.contains("modal__close-button")
+  );
+  {
+    closeModal();
+  }
 });
