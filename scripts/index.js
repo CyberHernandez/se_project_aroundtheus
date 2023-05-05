@@ -111,6 +111,17 @@ function getCard(cardData) {
 function renderCard(cardEl, container) {
   container.prepend(cardEl);
 }
+
+modal.forEach((modalElement) => {
+  modalElement.addEventListener("click", (evt) => {
+    if (
+      evt.target.classList.contains("modal") ||
+      evt.target.classList.contains("modal__close-button")
+    ) {
+      closeModal(modalElement);
+    }
+  });
+});
 /* -------------------------------------------------------------------------- */
 /*                               EVENT HANDLERS                               */
 /* -------------------------------------------------------------------------- */
@@ -171,14 +182,4 @@ cardAddForm.addEventListener("submit", (e) => {
 
 imageModalCloseButton.addEventListener("click", () => {
   closeModal(imageModal);
-});
-
-modal.addEventListener("click", (evt) => {
-  if (
-    evt.target.classList.contains("modal") ||
-    evt.target.classList.contains("modal__close-button")
-  );
-  {
-    closeModal();
-  }
 });
