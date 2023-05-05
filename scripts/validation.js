@@ -40,7 +40,6 @@ function toggleButtonState(
   submitButton,
   { inactiveButtonClass }
 ) {
-  debugger;
   let foundInvalid = false;
   inputElements.forEach((inputElement) => {
     if (!inputElement.validity.valid) {
