@@ -53,15 +53,31 @@ const imageModal = document.querySelector("#image-modal");
 const imageModalEl = document.querySelector(".modal__image");
 const imageModalCaption = document.querySelector(".modal__caption");
 const imageModalCloseButton = document.querySelector("#image-close-button");
+
+const modalOverlay = document.querySelector(".modal");
+const modal = document.querySelector(".modal__contianer");
 /* -------------------------------------------------------------------------- */
 /*                                  FUNCTIONS                                 */
 /* -------------------------------------------------------------------------- */
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", (e) => handleEscape(e, modal));
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", (e) => handleEscape(e, modal));
+  modalOverlay.addEventListener("click", function (evt) {
+    if (evt.target === modal) {
+      closeModal;
+    }
+  });
+}
+
+function handleEscape(e, modal) {
+  if (e.key === "Escape") {
+    closeModal(modal);
+  }
 }
 
 initialCards.forEach(function (cardData) {

@@ -87,6 +87,7 @@
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   padding-bottom: 13px;
+  width: 100%;
 }
 
 .modal__save-button {
@@ -104,6 +105,13 @@
 
 .modal__save-button:hover {
   opacity: 0.6;
+}
+
+.modal__save-button_disabled {
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+  opacity: 20%;
 }
 
 @media screen and (max-width: 650px) {
@@ -128,10 +136,31 @@
 
   .modal__form-input {
     font-size: 14px;
+    outline: none;
   }
 
   .modal__save-button {
     font-size: 14px;
     height: 46px;
   }
+}
+
+.modal__error {
+  color: #ff0000;
+  position: absolute;
+  top: 36px;
+  left: 0;
+  font-size: 12px;
+}
+
+.modal__form-input:focus {
+  outline: none;
+}
+
+.modal__form-label {
+  position: relative;
+}
+
+.modal__input_type_error {
+  border-bottom: 1px solid #ff0000;
 }
