@@ -28,6 +28,7 @@ function checkInputValidity(formElement, inputElement, options) {
   if (!inputElement.validity.valid) {
     return showInputError(formElement, inputElement, options);
   }
+
   hideInputError(formElement, inputElement, options);
 }
 

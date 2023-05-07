@@ -54,23 +54,24 @@ const imageModalEl = document.querySelector(".modal__image");
 const imageModalCaption = document.querySelector(".modal__caption");
 const imageModalCloseButton = document.querySelector("#image-close-button");
 
-const modal = document.querySelectorAll(".modal");
+const modals = document.querySelectorAll(".modal");
 /* -------------------------------------------------------------------------- */
 /*                                  FUNCTIONS                                 */
 /* -------------------------------------------------------------------------- */
 function openModal(modal) {
   modal.classList.add("modal_opened");
-  document.addEventListener("keydown", (e) => handleEscape(e, modal));
+  document.addEventListener("keydown", handleEscape);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_opened");
-  document.removeEventListener("keydown", (e) => handleEscape(e, modal));
+  document.removeEventListener("keydown", handleEscape);
 }
 
 function handleEscape(e, modal) {
   if (e.key === "Escape") {
-    closeModal(modal);
+    const openedModal = document.querySelector(".modal_opened");
+    closeModal(openedModal);
   }
 }
 
@@ -112,7 +113,7 @@ function renderCard(cardEl, container) {
   container.prepend(cardEl);
 }
 
-modal.forEach((modalElement) => {
+modals.forEach((modalElement) => {
   modalElement.addEventListener("click", (evt) => {
     if (
       evt.target.classList.contains("modal") ||
@@ -142,6 +143,7 @@ function handleCardAddSubmit(e) {
     cardListEl
   );
   closeModal(cardAddModal);
+  e.target.reset();
 }
 /* -------------------------------------------------------------------------- */
 /*                               EVENT LISTENERS                              */
@@ -153,18 +155,10 @@ profileEditButton.addEventListener("click", () => {
   openModal(profileEditModal);
 });
 
-editCloseButton.addEventListener("click", () => {
-  closeModal(profileEditModal);
-});
-
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 cardAddButton.addEventListener("click", () => {
   openModal(cardAddModal);
-});
-
-cardAddCloseButton.addEventListener("click", () => {
-  closeModal(cardAddModal);
 });
 
 cardAddForm.addEventListener("submit", (e) => {
@@ -178,8 +172,4 @@ cardAddForm.addEventListener("submit", (e) => {
 
   renderCard(cardView, cardListEl);
   closeModal(cardAddModal);
-});
-
-imageModalCloseButton.addEventListener("click", () => {
-  closeModal(imageModal);
 });
