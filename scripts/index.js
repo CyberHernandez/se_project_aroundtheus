@@ -44,6 +44,7 @@ const cardTemplate =
 const cardAddButton = document.querySelector("#add-button");
 const cardAddModal = document.querySelector("#add-modal");
 const cardAddCloseButton = document.querySelector("#add-close-button");
+const cardAddSaveButton = document.querySelector("#add-save-button");
 const cardAddForm = cardAddModal.querySelector("#add-card-form");
 
 const cardTitleInput = cardAddModal.querySelector("#card-title-input");
@@ -61,6 +62,8 @@ const modals = document.querySelectorAll(".modal");
 function openModal(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", handleEscape);
+  // checkInputValidity call
+  // TODO: create a separated function, which we calll here. This function has the only one goial - find the form inside the current modal, and if FOUND - erase (clear) form
 }
 
 function closeModal(modal) {
@@ -143,7 +146,8 @@ function handleCardAddSubmit(e) {
     cardListEl
   );
   closeModal(cardAddModal);
-  e.target.reset();
+  cardAddButton.disabled = true;
+  cardAddButton.classList.add("disabled");
 }
 /* -------------------------------------------------------------------------- */
 /*                               EVENT LISTENERS                              */
@@ -172,4 +176,5 @@ cardAddForm.addEventListener("submit", (e) => {
 
   renderCard(cardView, cardListEl);
   closeModal(cardAddModal);
+  e.target.reset();
 });

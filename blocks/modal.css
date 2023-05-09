@@ -103,7 +103,7 @@
   border: none;
 }
 
-.modal__save-button:hover {
+.modal__save-button:not(.modal__save-button_disabled):hover {
   opacity: 0.6;
 }
 
