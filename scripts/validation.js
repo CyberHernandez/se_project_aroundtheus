@@ -43,12 +43,10 @@ function toggleButtonState(
 ) {
   let foundInvalid = false;
   inputElements.forEach((inputElement) => {
-    console.log(inputElement.validity.valid, inputElement);
     if (!inputElement.validity.valid) {
       foundInvalid = true;
     }
   });
-  console.log(foundInvalid);
   if (foundInvalid) {
     submitButton.classList.add(inactiveButtonClass);
     submitButton.disabled = true;
@@ -62,7 +60,7 @@ function toggleButtonState(
 function setEventListeners(formElement, options) {
   const { inputSelector } = options;
   const inputElements = [...formElement.querySelectorAll(inputSelector)];
-  const submitButton = formElement.querySelector(options.submitButtonSelector);
+  const submitButton = formElement.querySelector(".modal__save-button");
   inputElements.forEach((inputElement) => {
     inputElement.addEventListener("input", (e) => {
       checkInputValidity(formElement, inputElement, options);
