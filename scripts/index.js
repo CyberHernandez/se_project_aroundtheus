@@ -62,8 +62,6 @@ const modals = document.querySelectorAll(".modal");
 function openModal(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", handleEscape);
-  // checkInputValidity call
-  // TODO: create a separated function, which we calll here. This function has the only one goial - find the form inside the current modal, and if FOUND - erase (clear) form
 }
 
 function closeModal(modal) {
@@ -146,8 +144,8 @@ function handleCardAddSubmit(e) {
     cardListEl
   );
   closeModal(cardAddModal);
-  cardAddButton.disabled = true;
-  cardAddButton.classList.add("disabled");
+  cardAddSaveButton.disabled = true;
+  cardAddSaveButton.classList.add("disabled");
 }
 /* -------------------------------------------------------------------------- */
 /*                               EVENT LISTENERS                              */
