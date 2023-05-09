@@ -43,10 +43,12 @@ function toggleButtonState(
 ) {
   let foundInvalid = false;
   inputElements.forEach((inputElement) => {
+    console.log(inputElement.validity.valid, inputElement);
     if (!inputElement.validity.valid) {
       foundInvalid = true;
     }
   });
+  console.log(foundInvalid);
   if (foundInvalid) {
     submitButton.classList.add(inactiveButtonClass);
     submitButton.disabled = true;

@@ -62,6 +62,8 @@ const modals = document.querySelectorAll(".modal");
 function openModal(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", handleEscape);
+  cardAddSaveButton.disabled = true;
+  cardAddSaveButton.classList.add("disabled");
 }
 
 function closeModal(modal) {
@@ -161,6 +163,8 @@ profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 cardAddButton.addEventListener("click", () => {
   openModal(cardAddModal);
+  cardAddForm.reset();
+  console.log(cardAddForm);
 });
 
 cardAddForm.addEventListener("submit", (e) => {
@@ -174,5 +178,12 @@ cardAddForm.addEventListener("submit", (e) => {
 
   renderCard(cardView, cardListEl);
   closeModal(cardAddModal);
+  const inputElements = cardAddModal.querySelectorAll(
+    configuration.inputSelector
+  );
+  const submitButton = cardAddModal.querySelector(
+    configuration.submitButtonSelector
+  );
+  toggleButtonState(inputElements, submitButton, configuration);
   e.target.reset();
 });
