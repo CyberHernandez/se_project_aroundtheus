@@ -62,8 +62,6 @@ const modals = document.querySelectorAll(".modal");
 function openModal(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener("keydown", handleEscape);
-  cardAddSaveButton.disabled = true;
-  cardAddSaveButton.classList.add("disabled");
 }
 
 function closeModal(modal) {
@@ -136,19 +134,6 @@ function handleProfileEditSubmit(e) {
   closeModal(profileEditModal);
 }
 
-function handleCardAddSubmit(e) {
-  e.preventDefault();
-  renderCard(
-    {
-      name: cardTitleInput.value,
-      link: cardLinkInput.value,
-    },
-    cardListEl
-  );
-  closeModal(cardAddModal);
-  cardAddSaveButton.disabled = true;
-  cardAddSaveButton.classList.add("disabled");
-}
 /* -------------------------------------------------------------------------- */
 /*                               EVENT LISTENERS                              */
 /* -------------------------------------------------------------------------- */
@@ -163,7 +148,6 @@ profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 cardAddButton.addEventListener("click", () => {
   openModal(cardAddModal);
-  cardAddForm.reset();
   console.log(cardAddForm);
 });
 
