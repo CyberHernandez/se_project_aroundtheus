@@ -184,6 +184,6 @@ cardAddForm.addEventListener("submit", (e) => {
   const submitButton = cardAddModal.querySelector(
     configuration.submitButtonSelector
   );
-  toggleButtonState(inputElements, submitButton, configuration);
   e.target.reset();
+  toggleButtonState(inputElements, submitButton, configuration);
 });
