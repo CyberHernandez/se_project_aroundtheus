@@ -1,8 +1,4 @@
-function showInputError(
-  formElement,
-  inputElement,
-  { inputErrorClass, errorClass }
-) {
+/*function showInputError(inputElement, errorMessageElement) {
   const errorMessageElement = formElement.querySelector(
     `#${inputElement.id}-error`
   );
@@ -23,7 +19,7 @@ function hideInputError(
   errorMessageElement.textContent = "";
   errorMessageElement.classList.remove(errorClass);
 }
-
+*/
 function checkInputValidity(formElement, inputElement, options) {
   if (!inputElement.validity.valid) {
     return showInputError(formElement, inputElement, options);
