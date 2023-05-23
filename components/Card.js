@@ -54,12 +54,10 @@ export default class Card {
     const imageModalElement = document.querySelector(".modal__image");
     const imageModalCaption = document.querySelector(".modal__caption");
 
-    this._element.addEventListener("click", () => {
-      imageModalElement.src = this.link;
-      imageModalCaption.alt = this.name;
-      imageModalCaption.textContent = this.name;
-      openModal(imageModal);
-    });
+    imageModalElement.src = this._link;
+    imageModalCaption.alt = this._name;
+    imageModalCaption.textContent = this._name;
+    openModal(imageModal);
   }
 
   generateCard() {

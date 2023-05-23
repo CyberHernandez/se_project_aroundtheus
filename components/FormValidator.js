@@ -10,7 +10,7 @@ export default class FormValidator {
   }
 
   _showInputError(inputElement, errorMessageElement) {
-    errorMessageElement = this._formElement.querySelector(
+    errorMessageElement = this._element.querySelector(
       `#${inputElement.id}-error`
     );
 
@@ -20,7 +20,7 @@ export default class FormValidator {
   }
 
   _hideInputError(inputElement) {
-    const errorMessageElement = this._formElement.querySelector(
+    const errorMessageElement = this._element.querySelector(
       `#${inputElement.id}-error`
     );
     inputElement.classList.remove(this._inputErrorClass);
@@ -28,10 +28,11 @@ export default class FormValidator {
     errorMessageElement.classList.remove(this._errorClass);
   }
 
-  _checkInputValidity(formElement, inputElement, options) {
-    if (!this._inputElement.validity.valid) {
-      return _showInputError(formElement, inputElement, options);
+  _checkInputValidity(inputElement, options) {
+    if (!inputElement.validity.valid) {
+      return this._showInputError(inputElement, options);
     }
+    this._hideInputError(inputElement, options);
   }
 
   _hasInvalidInput(inputList) {
@@ -57,34 +58,24 @@ export default class FormValidator {
     return;
   }
 
-  _setEventListeners(formElement, options) {
+  _setEventListeners(options) {
     const { inputSelector } = options;
-    const inputElements = [...formElement.querySelectorAll(inputSelector)];
-    const submitButton = formElement.querySelector(
+    const inputElements = [...this._element.querySelectorAll(inputSelector)];
+    const submitButton = this._element.querySelector(
       options.submitButtonSelector
     );
+    inputElements.forEach((inputElement) => {
+      inputElement.addEventListener("input", (e) => {
+        this._checkInputValidity(inputElement, options);
+        this._toggleButtonState(inputElements, submitButton, options);
+      });
+    });
   }
 
   enableValidation(options) {
-    const formElements = [...document.querySelectorAll(options.formSelector)];
-
     this._element.addEventListener("submit", (event) => {
       event.preventDefault();
-      //implementation of the listener
     });
-    _setEventListeners(this._element, options);
+    this._setEventListeners(options);
   }
 }
-
-/* from project #6...
-const configuration = {
-  formSelector: ".modal__form",
-  inputSelector: ".modal__form-input",
-  submitButtonSelector: ".modal__save-button",
-  inactiveButtonClass: "modal__save-button_disabled",
-  inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible",
-};
-
-enableValidation(configuration);
-*/
