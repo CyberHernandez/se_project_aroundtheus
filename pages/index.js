@@ -119,13 +119,13 @@ cardAddForm.addEventListener("submit", (e) => {
   const cardView = card.generateCard();
   cardListEl.prepend(cardView);
   closeModal(cardAddModal);
-  const inputElements = cardAddModal.querySelectorAll(
-    configuration.inputSelector
-  );
   const submitButton = cardAddModal.querySelector(
     configuration.submitButtonSelector
   );
   e.target.reset();
+
+  submitButton.classList.add(configuration.inactiveButtonClass);
+  submitButton.disabled = true;
 });
 
 const configuration = {
