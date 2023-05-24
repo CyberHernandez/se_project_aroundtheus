@@ -57,6 +57,8 @@ const cardTitleInput = cardAddModal.querySelector("#card-title-input");
 const cardLinkInput = cardAddModal.querySelector("#link-input");
 
 const modals = document.querySelectorAll(".modal");
+const editFormModal = document.querySelector("#profile-form");
+const cardFormModal = document.querySelector("#add-card-form");
 /* -------------------------------------------------------------------------- */
 /*                                  FUNCTIONS                                 */
 /* -------------------------------------------------------------------------- */
@@ -78,7 +80,7 @@ modals.forEach((modalElement) => {
   });
 });
 /* -------------------------------------------------------------------------- */
-/*                               EVENT HANDLERS                               */
+/*                               Profile                                      */
 /* -------------------------------------------------------------------------- */
 function handleProfileEditSubmit(e) {
   e.preventDefault();
@@ -87,9 +89,6 @@ function handleProfileEditSubmit(e) {
   closeModal(profileEditModal);
 }
 
-/* -------------------------------------------------------------------------- */
-/*                               EVENT LISTENERS                              */
-/* -------------------------------------------------------------------------- */
 profileEditButton.addEventListener("click", () => {
   profileNameInput.value = profileName.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
@@ -99,7 +98,12 @@ profileEditButton.addEventListener("click", () => {
 
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
+/* -------------------------------------------------------------------------- */
+/*                               Add Card                                     */
+/* -------------------------------------------------------------------------- */
+
 cardAddButton.addEventListener("click", () => {
+  cardFormValidator.disableButton();
   openModal(cardAddModal);
   console.log(cardAddForm);
 });
@@ -137,9 +141,9 @@ const configuration = {
   errorClass: "modal__error_visible",
   cardTemplate: "#card-template",
 };
-
-const editFormModal = document.querySelector("#profile-form");
-const cardFormModal = document.querySelector("#add-card-form");
+/* -------------------------------------------------------------------------- */
+/*                                  Validation                                */
+/* -------------------------------------------------------------------------- */
 
 const editFormValidator = new FormValidator(configuration, editFormModal);
 const cardFormValidator = new FormValidator(configuration, cardFormModal);

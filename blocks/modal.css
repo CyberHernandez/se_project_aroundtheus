@@ -112,6 +112,7 @@
   border: 1px solid #000;
   color: #000;
   opacity: 20%;
+  cursor: default;
 }
 
 @media screen and (max-width: 650px) {
