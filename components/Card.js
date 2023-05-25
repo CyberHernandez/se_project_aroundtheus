@@ -66,7 +66,7 @@ export default class Card {
     //fill template
     this._element.querySelector(".card__image").src = this._link;
     this._element.querySelector(".card__title").textContent = this._name;
-    this._element.querySelector(".card__image").alt = "Photo by ${this._name}";
+    this._element.querySelector(".card__image").alt = `Photo by ${this._name}`;
     //set event listeners
     this._setEventListeners();
 

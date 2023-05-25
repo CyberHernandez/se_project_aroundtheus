@@ -62,22 +62,14 @@ const cardFormModal = document.querySelector("#add-card-form");
 /* -------------------------------------------------------------------------- */
 /*                                  FUNCTIONS                                 */
 /* -------------------------------------------------------------------------- */
-
-initialCards.forEach(function (cardData) {
+function createCard(cardData) {
   const card = new Card(cardData, "#card-template");
   const cardElement = card.generateCard();
   cardListEl.prepend(cardElement);
-});
+}
 
-modals.forEach((modalElement) => {
-  modalElement.addEventListener("click", (evt) => {
-    if (
-      evt.target.classList.contains("modal") ||
-      evt.target.classList.contains("modal__close-button")
-    ) {
-      closeModal(modalElement);
-    }
-  });
+initialCards.forEach(function (cardData) {
+  createCard(cardData);
 });
 /* -------------------------------------------------------------------------- */
 /*                               Profile                                      */
@@ -123,13 +115,7 @@ cardAddForm.addEventListener("submit", (e) => {
   const cardView = card.generateCard();
   cardListEl.prepend(cardView);
   closeModal(cardAddModal);
-  const submitButton = cardAddModal.querySelector(
-    configuration.submitButtonSelector
-  );
-  e.target.reset();
-
-  submitButton.classList.add(configuration.inactiveButtonClass);
-  submitButton.disabled = true;
+  cardFormValidator.toggleButtonState();
 });
 
 const configuration = {
