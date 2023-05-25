@@ -64,12 +64,12 @@ const cardFormModal = document.querySelector("#add-card-form");
 /* -------------------------------------------------------------------------- */
 function createCard(cardData) {
   const card = new Card(cardData, "#card-template");
-  const cardElement = card.generateCard();
-  cardListEl.prepend(cardElement);
+  return card.generateCard();
 }
 
 initialCards.forEach(function (cardData) {
-  createCard(cardData);
+  const cardElement = createCard(cardData);
+  cardListEl.prepend(cardElement);
 });
 /* -------------------------------------------------------------------------- */
 /*                               Profile                                      */
@@ -104,18 +104,15 @@ cardAddForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const name = e.target.title.value;
   const link = e.target.link.value;
-  const card = new Card(
-    {
-      name,
-      link,
-    },
-    configuration.cardTemplate
-  );
+  const cardElement = createCard({
+    name,
+    link,
+  });
 
-  const cardView = card.generateCard();
-  cardListEl.prepend(cardView);
+  cardListEl.prepend(cardElement);
   closeModal(cardAddModal);
   cardFormValidator.toggleButtonState();
+  e.target.reset();
 });
 
 const configuration = {

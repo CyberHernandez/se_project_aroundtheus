@@ -1,21 +1,11 @@
-export function openModal(modal) {
-  modal.classList.add("modal_opened");
-  document.addEventListener("keydown", (e) => handleEscape(e, modal));
-  document.addEventListener("click", handleOverlayClick);
-}
-
-export function closeModal(modal) {
-  modal.classList.remove("modal_opened");
-  document.removeEventListener("keydown", (e) => handleEscape(e, modal));
-  document.removeEventListener("click", handleOverlayClick);
-}
-
-function handleEscape(e, modal) {
+function handleEscape(e) {
+  console.log(e);
   if (e.key === "Escape") {
+    const modal = document.querySelector(".modal_opened");
+    console.log(modal);
     closeModal(modal);
   }
 }
-
 function handleOverlayClick(evt) {
   const openedModal = document.querySelector(".modal_opened");
   if (
@@ -24,4 +14,17 @@ function handleOverlayClick(evt) {
   ) {
     closeModal(openedModal);
   }
+}
+
+export function openModal(modal) {
+  modal.classList.add("modal_opened");
+  console.log(modal);
+  modal.addEventListener("keyup", handleEscape);
+  modal.addEventListener("mousedown", handleOverlayClick);
+}
+
+export function closeModal(modal) {
+  modal.classList.remove("modal_opened");
+  modal.removeEventListener("keyup", handleEscape);
+  modal.removeEventListener("mousedown", handleOverlayClick);
 }
