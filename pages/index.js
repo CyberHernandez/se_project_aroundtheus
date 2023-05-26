@@ -69,7 +69,7 @@ function createCard(cardData) {
 
 initialCards.forEach(function (cardData) {
   const cardElement = createCard(cardData);
-  cardListEl.prepend(cardElement);
+  cardListEl.append(cardElement);
 });
 /* -------------------------------------------------------------------------- */
 /*                               Profile                                      */
@@ -95,9 +95,7 @@ profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 /* -------------------------------------------------------------------------- */
 
 cardAddButton.addEventListener("click", () => {
-  cardFormValidator.disableButton();
   openModal(cardAddModal);
-  console.log(cardAddForm);
 });
 
 cardAddForm.addEventListener("submit", (e) => {
@@ -111,8 +109,8 @@ cardAddForm.addEventListener("submit", (e) => {
 
   cardListEl.prepend(cardElement);
   closeModal(cardAddModal);
-  cardFormValidator.toggleButtonState();
   e.target.reset();
+  cardFormValidator.toggleButtonState();
 });
 
 const configuration = {
